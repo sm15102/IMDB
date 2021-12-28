@@ -1,0 +1,21 @@
+
+
+
+  <app-search (searchEmiter)="onFilterChange($event)" ></app-search>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly stretch">
+  <div fxLayout="column"   *ngFor="let mo of moviesResponse?.movies">
+        <app-movie-card [movie]="mo"></app-movie-card>
+        <div *ngIf="this.isLogedIn" fxLayout="row" fxLayoutAlign="space-evenly stretch">
+          <app-star-rating (onSelected)="rateMovie($event)" [selectedRating]="this.mo.averageRating!" [movieId]="this.mo.id!" [enabled]=true></app-star-rating>
+        </div>
+
+  </div>
+</div>
+<div *ngIf="this.moviesResponse?.hasMore" fxLayout="row" fxLayoutAlign="space-evenly stretch">
+  <button mat-raised-button color="primary" (click)="loadNext()">Next</button>
+</div>
+<div *ngIf="this.page > 1" fxLayout="row" fxLayoutAlign="space-evenly stretch">
+  <button mat-raised-button color="primary" (click)="loadPrevious()">Previous</button>
+</div>
+

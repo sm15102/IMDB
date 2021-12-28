@@ -1,0 +1,8 @@
+<div fxLayout="row" >
+  <form massage fxFlex="100">
+    <mat-form-field fxFlex="100">
+      <mat-label>Search</mat-label>
+      <input matInput class='full-width' appearance="standard" [minLength]="2" [maxLength]="200"  fxFlex="100" matInput placeholder="Search" #searchInput  (input)="onChange(searchInput.value)">
+    </mat-form-field>
+  </form>
+</div>

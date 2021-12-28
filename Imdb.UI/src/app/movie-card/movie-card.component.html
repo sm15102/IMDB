@@ -1,0 +1,10 @@
+<div fxLayout="column" fxLayoutAlign="space-between" (click)="onClick()" class="card">
+  <img fxFlex="20" src="../../assets/img/{{movie.coverImageUrl}}"
+      [alt]="movie.title"
+      [title]="movie.title">
+
+      <header xflex="20">{{movie.title}}</header>
+      <div fxflex="20">{{movie.description  }}</div>
+      <div fxflex="20" class="date">Release date {{movie.releaseDate |date }}</div>
+      <div fxflex="20">Average rating: {{movie.averageRating}}</div>
+</div>
